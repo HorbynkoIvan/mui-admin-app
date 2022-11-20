@@ -42,9 +42,10 @@
     "@typescript-eslint/explicit-function-return-type": [
       "error",
       {
-        "allowExpressions": false
+        "allowExpressions": true
       }
     ],
+    "@typescript-eslint/no-explicit-any": ["off"],
     "max-len": [
       "warn",
       {
