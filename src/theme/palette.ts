@@ -2,8 +2,6 @@ export const palette = {
   red: {
     main: "#F2387B",
     hover: "#FF81AE",
-    error: "#FF0000",
-    errorNotification: "#F65B6E",
   },
   error: {
     main: "#FF0000",

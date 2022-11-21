@@ -7,50 +7,34 @@ export const typography = {
   fontWeightBold: 700,
   fontWeightExtraBold: 800,
   h1: {
-    fontWeight: 700,
-    lineHeight: 36 / 24,
-    fontSize: 24,
+    fontWeight: 800,
+    lineHeight: 64 / 48,
+    fontSize: 48,
   },
   h2: {
     fontWeight: 700,
-    lineHeight: 28 / 18,
-    fontSize: 18,
+    lineHeight: 44 / 36,
+    fontSize: 36,
   },
-  h3: {
-    fontWeight: 700,
-    lineHeight: 24 / 16,
-    fontSize: 16,
-  },
-  h4: {
-    fontWeight: 700,
-    lineHeight: 24 / 14,
-    fontSize: 14,
-  },
-  subtitle1: {
-    fontWeight: 700,
-    lineHeight: 16 / 12,
-    fontSize: 12,
-  },
+  h3: {},
+  h4: {},
+  subtitle1: {},
   subtitle2: {},
-  body1: {
-    fontWeight: 400,
-    lineHeight: 24 / 14,
-    fontSize: 14,
-  },
-  body2: {
-    fontWeight: 400,
-    lineHeight: 16 / 12,
-    fontSize: 12,
-  },
+  body1: {},
+  body2: {},
   caption: {},
-  overline: {
-    fontWeight: 400,
-    lineHeight: 24 / 14,
-    fontSize: 14,
-  },
-  button: {
+  overline: {},
+  button: {},
+  test: {
+    color: "red",
     fontWeight: 700,
     lineHeight: 24 / 14,
     fontSize: 14,
   },
 };
+
+declare module "@mui/material/Typography" {
+  interface TypographyPropsVariantOverrides {
+    test: true;
+  }
+}

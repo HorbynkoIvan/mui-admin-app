@@ -1,40 +1,21 @@
 import * as React from "react";
-import { Container, Typography, Box, Link } from "@mui/material";
+import { Container, Typography, Box } from "@mui/material";
+import { Header, Sidebar } from "features";
 
 export default function App(): JSX.Element {
   return (
-    <Container maxWidth="sm">
+    <Container>
       <Box sx={{ my: 4 }}>
-        <Typography variant="h4" component="h1" gutterBottom>
+        <Header />
+        <Sidebar />
+        <Typography variant="h1" component="h1" gutterBottom>
           Create React App example with TypeScript
         </Typography>
-        <Typography variant="h4" component="h1" gutterBottom>
+        <Typography variant="h2" component="h2" gutterBottom>
           Create React App example with TypeScript
         </Typography>
-        <Typography variant="h4" component="h1" gutterBottom>
+        <Typography variant="test" component="p" gutterBottom>
           Create React App example with TypeScript
-        </Typography>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Create React App example with TypeScript
-        </Typography>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Create React App example with TypeScript
-        </Typography>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Create React App example with TypeScript
-        </Typography>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Create React App example with TypeScript
-        </Typography>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Create React App example with TypeScript
-        </Typography>
-        <Typography variant="body2" color="text.secondary" align="center">
-          {"Copyright © "}
-          <Link color="inherit" href="https://mui.com/">
-            Your Website
-          </Link>
-          {new Date().getFullYear()}.
         </Typography>
       </Box>
     </Container>
