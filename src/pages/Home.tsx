@@ -8,8 +8,6 @@ export const Home = (): JSX.Element => {
       <Header />
       <Sidebar />
       <Box sx={{ my: 4 }}>
-        <Header />
-        <Sidebar />
         <Typography variant="h1" component="h1" gutterBottom>
           Create React App example with TypeScript
         </Typography>

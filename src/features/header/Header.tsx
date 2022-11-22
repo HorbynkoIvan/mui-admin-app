@@ -11,7 +11,7 @@ const rightLink = {
 export const Header = (): JSX.Element => {
   return (
     <div>
-      <AppBar position="fixed">
+      <AppBar position="sticky">
         <Toolbar sx={{ justifyContent: "space-between" }}>
           <Box sx={{ flex: 1 }} />
           <Link variant="h6" underline="none" color="inherit" href="/test1" sx={{ fontSize: 24 }}>
