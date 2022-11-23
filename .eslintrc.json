@@ -56,7 +56,8 @@
     "react-hooks/exhaustive-deps": "warn",
     "import/prefer-default-export": "off",
     "react/prop-types": "off",
-    "linebreak-style": "off"
+    "linebreak-style": "off",
+    "react/react-in-jsx-scope": "off"
   },
   "settings": {
     "react": {
