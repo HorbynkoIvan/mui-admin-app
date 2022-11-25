@@ -6,14 +6,14 @@ import {
   ListItemIcon,
   ListItemText,
   Collapse,
+  SvgIcon,
 } from "@mui/material";
 import { MdExpandLess, MdExpandMore } from "react-icons/md";
 import { SidebarHeader } from "../SidebarHeader";
 import { SidebarFooter } from "../SidebarFooter";
+import { DRAWER_WIDTH } from "common/constants";
 import { useMenuCollapse, useMenuConfig } from "./hooks";
 import { MenuItemInterface } from "../interfaces";
-
-const drawerWidth = 240;
 
 export const Sidebar = (): JSX.Element => {
   const menuConfig = useMenuConfig();
@@ -22,10 +22,10 @@ export const Sidebar = (): JSX.Element => {
   return (
     <Drawer
       sx={{
-        width: drawerWidth,
+        width: DRAWER_WIDTH,
         flexShrink: 0,
         "& .MuiDrawer-paper": {
-          width: drawerWidth,
+          width: DRAWER_WIDTH,
           boxSizing: "border-box",
         },
       }}
@@ -37,13 +37,17 @@ export const Sidebar = (): JSX.Element => {
           <Box key={id}>
             {!children ? (
               <ListItemButton key={id} sx={{ py: 1.5, px: 2 }} divider>
-                <ListItemIcon sx={{ svg: { width: 20, height: 20 } }}>{icon}</ListItemIcon>
+                <ListItemIcon>
+                  <SvgIcon component={icon} sx={{ width: 20, height: 20 }} />
+                </ListItemIcon>
                 <ListItemText>{title}</ListItemText>
               </ListItemButton>
             ) : (
               <>
                 <ListItemButton sx={{ py: 1.5, px: 2 }} onClick={() => handleClick(id)} divider>
-                  <ListItemIcon>{icon}</ListItemIcon>
+                  <ListItemIcon>
+                    <SvgIcon component={icon} sx={{ width: 20, height: 20 }} />
+                  </ListItemIcon>
                   <ListItemText>{title}</ListItemText>
                   {collapseId === id ? <MdExpandLess /> : <MdExpandMore />}
                 </ListItemButton>

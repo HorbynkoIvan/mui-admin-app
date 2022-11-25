@@ -1,3 +1,13 @@
+import {
+  MdFeed,
+  MdCastForEducation,
+  MdOutlineCalendarViewMonth,
+  MdStar,
+  MdPeople,
+  MdPerson,
+  MdSettings,
+  MdSupport,
+} from "react-icons/md";
 import { MenuItemInterface } from "../../interfaces";
 
 const menuConfig = [
@@ -5,12 +15,12 @@ const menuConfig = [
     id: "growth_plan_id",
     title: "Growth Plan",
     url: "/growth-plan",
-    icon: "<MdFeed />",
+    icon: MdFeed,
   },
   {
     id: "in_progress_id",
     title: "In progress",
-    icon: "<MdCastForEducation />",
+    icon: MdCastForEducation,
     children: [
       {
         id: "new_courses_id",
@@ -38,18 +48,18 @@ const menuConfig = [
     id: "calendar_id",
     title: "Calendar",
     url: "/calendar",
-    icon: "<MdOutlineCalendarViewMonth />",
+    icon: MdOutlineCalendarViewMonth,
   },
   {
     id: "my_certificates_id",
     title: "My Certificates",
     url: "/certificates",
-    icon: "<MdStar />",
+    icon: MdStar,
   },
   {
     id: "communities_id",
     title: "Communities",
-    icon: "<MdPeople />",
+    icon: MdPeople,
     children: [
       {
         id: "test1",
@@ -77,19 +87,19 @@ const menuConfig = [
     id: "my_account_id",
     title: "My account",
     url: "/account",
-    icon: "<MdPerson />",
+    icon: MdPerson,
   },
   {
     id: "settings_id",
     title: "Settings",
     url: "/settings",
-    icon: "<MdSettings />",
+    icon: MdSettings,
   },
   {
     id: "support_id",
     title: "Support",
     url: "/support",
-    icon: "<MdSupport />",
+    icon: MdSupport,
   },
 ];
 
