@@ -6,7 +6,7 @@ export const SidebarHeader = (): JSX.Element => (
       component="img"
       src="/static/images/school_logo.svg"
       alt="school logo"
-      sx={{ maxWidth: 84, height: 56 }}
+      sx={{ maxWidth: 100 }}
     />
   </ListItem>
 );

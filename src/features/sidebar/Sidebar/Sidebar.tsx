@@ -18,6 +18,8 @@ import {
   MdPerson,
   MdExpandLess,
   MdExpandMore,
+  MdSupport,
+  MdSettings,
 } from "react-icons/md";
 import { SidebarHeader } from "../SidebarHeader";
 import { useMenuCollapse } from "./hooks";
@@ -108,34 +110,51 @@ const menu = {
       id: "settings_id",
       title: "Settings",
       url: "/settings",
-      icon: <MdStorage />,
+      icon: <MdSettings />,
     },
     {
       id: "support_id",
       title: "Support",
       url: "/support",
-      icon: <MdStorage />,
+      icon: <MdSupport />,
     },
   ],
 };
+
+const drawerWidth = 240;
 
 export const Sidebar = (): JSX.Element => {
   const { collapseId, handleClick } = useMenuCollapse();
 
   return (
-    <Drawer variant="permanent">
-      <List disablePadding>
+    <Drawer
+      sx={{
+        width: drawerWidth,
+        flexShrink: 0,
+        "& .MuiDrawer-paper": {
+          width: drawerWidth,
+          boxSizing: "border-box",
+        },
+      }}
+      variant="permanent"
+      anchor="left">
+      <List dense disablePadding>
         <SidebarHeader />
-        {menu.children.map(({ id, title, icon, children = null }) => (
+        {menu.children.map(({ id, title, icon, url, children = null }) => (
           <Box key={id}>
             {!children ? (
-              <ListItemButton key={id} sx={{ py: 2, px: 3 }}>
-                <ListItemIcon>{icon}</ListItemIcon>
+              <ListItemButton key={id} sx={{ py: 1.5, px: 2 }} divider>
+                <ListItemIcon
+                  sx={{ width: 20, height: 20 }}
+                  // itemProp={{ style: { width: 20, height: 20 } }}
+                >
+                  {icon}
+                </ListItemIcon>
                 <ListItemText>{title}</ListItemText>
               </ListItemButton>
             ) : (
               <>
-                <ListItemButton onClick={() => handleClick(id)}>
+                <ListItemButton sx={{ py: 1.5, px: 2 }} onClick={() => handleClick(id)} divider>
                   <ListItemIcon>{icon}</ListItemIcon>
                   <ListItemText>{title}</ListItemText>
                   {collapseId === id ? <MdExpandLess /> : <MdExpandMore />}
@@ -143,15 +162,14 @@ export const Sidebar = (): JSX.Element => {
                 <Collapse in={collapseId === id} timeout="auto" unmountOnExit>
                   <List disablePadding>
                     {children?.map(({ id: childId, title: childTitle }) => (
-                      <ListItemButton key={childId} sx={{ py: 2, px: 3 }}>
-                        <ListItemText>{childTitle}</ListItemText>
+                      <ListItemButton key={childId}>
+                        <ListItemText inset>{childTitle}</ListItemText>
                       </ListItemButton>
                     ))}
                   </List>
                 </Collapse>
               </>
             )}
-            <Divider />
           </Box>
         ))}
       </List>
