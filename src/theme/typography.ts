@@ -24,7 +24,7 @@ export const typography = {
   body2: {},
   caption: {},
   overline: {},
-  button: {},
+  button: { fontWeight: 600, lineHeight: 16 / 14, fontSize: 14 },
   test: {
     color: "red",
     fontWeight: 700,
