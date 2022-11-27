@@ -10,7 +10,7 @@ const rightLink = {
 };
 
 export const Header = (): JSX.Element => (
-  <AppBar sx={{ width: `calc(100% - ${DRAWER_WIDTH}px)`, ml: `${DRAWER_WIDTH}px` }}>
+  <AppBar sx={{ width: `calc(100% - ${DRAWER_WIDTH}px)`, ml: `${DRAWER_WIDTH}px`, height: "68px" }}>
     <Toolbar sx={{ justifyContent: "space-between" }}>
       <Box sx={{ flex: 1 }} />
       <Link variant="h6" underline="none" color="inherit" href="/test1" sx={{ fontSize: 24 }}>

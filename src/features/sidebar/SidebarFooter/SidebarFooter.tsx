@@ -1,6 +1,6 @@
 import { Typography, Box } from "@mui/material";
 import { ButtonOutlined } from "common/components/buttons";
-import { palette } from "../../../theme/palette";
+import { palette } from "theme/palette";
 
 export const SidebarFooter = (): JSX.Element => (
   <Box sx={{ mt: "auto", display: "flex", flexDirection: "column", alignItems: "center" }}>
