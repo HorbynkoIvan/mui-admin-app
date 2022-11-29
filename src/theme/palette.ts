@@ -1,4 +1,8 @@
 export const palette = {
+  primaryBg: "#F5F5F8",
+  white: {
+    main: "#ffffff",
+  },
   red: {
     main: "#F2387B",
     hover: "#FF81AE",

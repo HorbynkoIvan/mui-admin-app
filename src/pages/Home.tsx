@@ -1,14 +1,23 @@
 import * as React from "react";
 import { Header, Sidebar } from "features";
-import { Box, Toolbar, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import { palette } from "theme/palette";
 
 export const Home = (): JSX.Element => {
   return (
     <Box sx={{ display: "flex" }}>
       <Header />
       <Sidebar />
-      <Box component="main" sx={{ flexGrow: 1, bgcolor: "background.default", p: 3 }}>
-        <Toolbar />
+      <Box
+        component="main"
+        sx={{
+          flexGrow: 1,
+          backgroundColor: palette.primaryBg,
+          pt: "calc(68px + 25px)",
+          px: 3,
+          pb: "25px",
+          height: "100vh",
+        }}>
         <Typography paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
           ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
