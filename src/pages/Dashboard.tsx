@@ -3,7 +3,7 @@ import { Header, Sidebar } from "features";
 import { Box, Typography } from "@mui/material";
 import { palette } from "theme/palette";
 
-export const Home = (): JSX.Element => {
+export const Dashboard = (): JSX.Element => {
   return (
     <Box sx={{ display: "flex" }}>
       <Header />
