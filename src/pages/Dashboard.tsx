@@ -2,6 +2,7 @@ import * as React from "react";
 import { Header, Sidebar } from "features";
 import { Box, Typography } from "@mui/material";
 import { palette } from "theme/palette";
+import { Checkbox } from "common";
 
 export const Dashboard = (): JSX.Element => {
   return (
@@ -18,6 +19,13 @@ export const Dashboard = (): JSX.Element => {
           pb: "25px",
           height: "100vh",
         }}>
+        {/* <Checkbox */}
+        {/*   name="rememberMe" */}
+        {/*   label="Remember me" */}
+        {/*   componentsProps={{ typography: { variant: "subtitle2", color: palette.grey[500] } }} */}
+        {/*   onChange={() => console.log("handleChange")} */}
+        {/*   checked={true} */}
+        {/* /> */}
         <Typography paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
           ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
