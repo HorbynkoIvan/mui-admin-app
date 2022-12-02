@@ -1,5 +1,5 @@
 import { MainLayout, AuthLayout } from "layouts";
-import { Login, Registration, Dashboard } from "pages";
+import { Login, Registration, ForgotPassword, Dashboard } from "pages";
 
 export const routes = [
   {
@@ -11,6 +11,7 @@ export const routes = [
     children: [
       { path: "/login", element: <Login /> },
       { path: "/registration", element: <Registration /> },
+      { path: "/forgot-password", element: <ForgotPassword /> },
     ],
   },
 ];

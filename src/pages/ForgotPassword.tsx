@@ -1,9 +1,9 @@
 import { Typography, Stack } from "@mui/material";
 import { palette } from "theme/palette";
 import { Link } from "react-router-dom";
-import { RegistrationForm } from "features/auth";
+import { ForgotPasswordForm } from "features/auth";
 
-export const Registration = (): JSX.Element => (
+export const ForgotPassword = (): JSX.Element => (
   <Stack sx={{ height: "100%" }}>
     <Typography variant="h3" component="h3">
       Member’s area
@@ -12,7 +12,7 @@ export const Registration = (): JSX.Element => (
       George Washington high school in Rosewood, Wisconsin, USA
     </Typography>
 
-    <RegistrationForm />
+    <ForgotPasswordForm />
 
     <Typography
       align="center"

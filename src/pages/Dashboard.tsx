@@ -2,7 +2,7 @@ import * as React from "react";
 import { Header, Sidebar } from "features";
 import { Box, Typography } from "@mui/material";
 import { palette } from "theme/palette";
-import { Checkbox } from "common";
+// import { Checkbox } from "common";
 
 export const Dashboard = (): JSX.Element => {
   return (
