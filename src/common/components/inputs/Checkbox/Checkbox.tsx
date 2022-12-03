@@ -30,7 +30,9 @@ const BpCheckedIcon = styled(BpIcon)(() => ({
   },
 }));
 
-export const Checkbox = ({ ...props }: FormControlLabelProps) => (
+type CheckboxMuiProps = Omit<FormControlLabelProps, "control"> & CheckboxProps;
+
+export const Checkbox = ({ ...props }: CheckboxMuiProps) => (
   <FormControlLabel
     {...props}
     control={<CheckboxMui icon={<BpIcon />} checkedIcon={<BpCheckedIcon />} disableRipple />}
