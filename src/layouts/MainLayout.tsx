@@ -11,7 +11,7 @@ export const MainLayout = (): JSX.Element => (
       component="main"
       sx={{
         flexGrow: 1,
-        backgroundColor: palette.primaryBg,
+        backgroundColor: palette.bodyBackground.main,
         pt: "68px",
         px: 3,
         pb: "25px",

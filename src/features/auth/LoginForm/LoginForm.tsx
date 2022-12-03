@@ -3,6 +3,7 @@ import { palette } from "theme/palette";
 import { Checkbox } from "common/components";
 import { MdAccountCircle, MdLock, MdVisibility, MdVisibilityOff } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { ButtonPrimary } from "../../../common/components/buttons/ButtonPrimary";
 
 const mock = { showPassword: true, checked: true };
 
@@ -62,6 +63,9 @@ export const LoginForm = (): JSX.Element => (
       </Typography>
     </Stack>
 
+    <ButtonPrimary component={Link} to="/">
+      authentication
+    </ButtonPrimary>
     <Button
       variant="contained"
       color="primary"
