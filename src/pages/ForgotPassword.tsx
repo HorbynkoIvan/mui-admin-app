@@ -6,10 +6,10 @@ import { ForgotPasswordForm } from "features/auth";
 export const ForgotPassword = (): JSX.Element => (
   <Stack sx={{ height: "100%" }}>
     <Typography variant="h3" component="h3">
-      Member’s area
+      Forgot your password?
     </Typography>
     <Typography variant="subtitle2" color={palette.grey[500]} sx={{ mb: "48px" }}>
-      George Washington high school in Rosewood, Wisconsin, USA
+      {"Enter your email address below and we'll send you a link to reset your password."}
     </Typography>
 
     <ForgotPasswordForm />

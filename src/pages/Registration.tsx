@@ -6,10 +6,10 @@ import { RegistrationForm } from "features/auth";
 export const Registration = (): JSX.Element => (
   <Stack sx={{ height: "100%" }}>
     <Typography variant="h3" component="h3">
-      Member’s area
+      Welcome
     </Typography>
     <Typography variant="subtitle2" color={palette.grey[500]} sx={{ mb: "48px" }}>
-      George Washington high school in Rosewood, Wisconsin, USA
+      Sign up on the internal platform
     </Typography>
 
     <RegistrationForm />
