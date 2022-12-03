@@ -1,7 +1,7 @@
-import { ButtonRouter } from "common/components/buttons";
+import { Button } from "../buttons";
 import { styled } from "@mui/material";
 
-export const ButtonLinkOutlined = styled(ButtonRouter)(({ theme }) => ({
+export const ButtonOutlined = styled(Button)(({ theme }) => ({
   width: "116px",
   height: "32px",
   padding: 0,

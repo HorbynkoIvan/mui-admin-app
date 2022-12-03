@@ -1,2 +1,2 @@
-export * from "./ButtonRouter";
-export * from "./ButtonLinkOutlined";
+export * from "./Button";
+export * from "./ButtonOutlined";
