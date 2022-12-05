@@ -2,10 +2,11 @@ import { Stack, Typography } from "@mui/material";
 import { palette } from "theme/palette";
 import { Link } from "react-router-dom";
 import { LoginForm } from "features/auth";
+import { typography } from "../theme/typography";
 
 export const Login = (): JSX.Element => (
   <Stack sx={{ height: "100%" }}>
-    <Typography variant="h3" component="h3">
+    <Typography variant="h6" component="h6" fontWeight={typography.fontWeightExtraBold}>
       Welcome
     </Typography>
     <Typography variant="subtitle2" color={palette.grey[500]} sx={{ mb: "48px" }}>

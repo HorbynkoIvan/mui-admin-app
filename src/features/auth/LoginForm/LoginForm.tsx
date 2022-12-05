@@ -9,7 +9,7 @@ const mock = { showPassword: true, checked: true };
 
 export const LoginForm = (): JSX.Element => (
   <form>
-    <Stack spacing={2}>
+    <Stack spacing={4}>
       <TextField
         variant="outlined"
         placeholder="Login/E-mail"
@@ -44,37 +44,27 @@ export const LoginForm = (): JSX.Element => (
           ),
         }}
       />
-    </Stack>
 
-    <Stack direction="row" alignItems="center" justifyContent="space-between">
-      <Checkbox
-        name="rememberMe"
-        label="Remember me"
-        componentsProps={{ typography: { variant: "subtitle2", color: palette.grey[500] } }}
-        onChange={() => console.log("handleChange")}
-        checked={mock.checked}
-      />
-      <Typography
-        variant="subtitle2"
-        color={palette.grey[500]}
-        component={Link}
-        to="/forgot-password">
-        Forgot password?
-      </Typography>
-    </Stack>
+      <Stack direction="row" alignItems="center" justifyContent="space-between">
+        <Checkbox
+          name="rememberMe"
+          label="Remember me"
+          componentsProps={{ typography: { variant: "subtitle2", color: palette.grey[500] } }}
+          onChange={() => console.log("handleChange")}
+          checked={mock.checked}
+        />
+        <Typography
+          variant="subtitle2"
+          color={palette.grey[500]}
+          component={Link}
+          to="/forgot-password">
+          Forgot password?
+        </Typography>
+      </Stack>
 
-    <ButtonPrimary component={Link} to="/">
-      authentication
-    </ButtonPrimary>
-    <Button
-      variant="contained"
-      color="primary"
-      fullWidth
-      size="large"
-      sx={{ mt: 3, height: "56px" }}
-      component={Link}
-      to="/">
-      Skip authentication
-    </Button>
+      <ButtonPrimary component={Link} to="/">
+        authentication
+      </ButtonPrimary>
+    </Stack>
   </form>
 );

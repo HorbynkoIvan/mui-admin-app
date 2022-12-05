@@ -18,6 +18,12 @@ export const typography = {
   },
   h3: {},
   h4: {},
+  h5: {},
+  h6: {
+    fontWeight: 600,
+    lineHeight: 30 / 24,
+    fontSize: 30,
+  },
   subtitle1: {},
   subtitle2: {},
   body1: {},

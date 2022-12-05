@@ -5,9 +5,9 @@ import { typography } from "./typography";
 import { general } from "./general";
 
 const initTheme = {
+  ...general,
   palette,
   typography,
-  general,
 };
 
 export const theme = createTheme(initTheme);

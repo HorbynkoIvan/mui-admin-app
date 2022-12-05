@@ -2,8 +2,8 @@ import { green } from "@mui/material/colors";
 
 export const palette = {
   primary: {
-    light: "#757ce8",
-    main: "#3f50b5",
+    light: "#FF81AE",
+    main: "#F2387B",
     dark: "#002884",
     contrastText: "#fff",
   },
