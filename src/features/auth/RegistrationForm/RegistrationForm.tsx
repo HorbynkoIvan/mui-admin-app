@@ -1,6 +1,5 @@
-import { Typography, Stack, TextField, InputAdornment, Button, IconButton } from "@mui/material";
-import { palette } from "theme/palette";
-import { Checkbox } from "common/components";
+import { Stack, TextField, InputAdornment, IconButton } from "@mui/material";
+
 import {
   MdAccountCircle,
   MdOutlineAccountCircle,

@@ -20,7 +20,7 @@ export const typography = {
   h4: {},
   h5: {},
   h6: {
-    fontWeight: 600,
+    fontWeight: 400,
     lineHeight: 30 / 24,
     fontSize: 30,
   },

@@ -8,9 +8,9 @@ import {
   MdSettings,
   MdSupport,
 } from "react-icons/md";
-import { MenuItemInterface } from "../../interfaces";
+import { MenuItem } from "../../interfaces";
 
-const menuConfig = [
+const menuConfig: MenuItem[] = [
   {
     id: "growth_plan_id",
     title: "Growth Plan",
@@ -21,7 +21,7 @@ const menuConfig = [
     id: "in_progress_id",
     title: "In progress",
     icon: MdCastForEducation,
-    children: [
+    subMenu: [
       {
         id: "new_courses_id",
         title: "New Courses",
@@ -60,7 +60,7 @@ const menuConfig = [
     id: "communities_id",
     title: "Communities",
     icon: MdPeople,
-    children: [
+    subMenu: [
       {
         id: "test1",
         title: "test1",
@@ -103,4 +103,4 @@ const menuConfig = [
   },
 ];
 
-export const useMenuConfig = (): MenuItemInterface[] => menuConfig;
+export const useMenuConfig = (): MenuItem[] => menuConfig;
