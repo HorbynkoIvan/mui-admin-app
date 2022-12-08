@@ -1,86 +1,26 @@
-import {
-  Calendar as BigCalendar,
-  momentLocalizer,
-  EventWrapperProps,
-  EventProps,
-} from "react-big-calendar";
+import { useMemo } from "react";
+import { Calendar as BigCalendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
-import { Box } from "@mui/material";
-import { Button } from "common";
-// Setup the localizer by providing the moment (or globalize, or Luxon) Object
-// to the correct localizer.
-const localizer = momentLocalizer(moment); // or globalizeLocalizer
+import { Toolbar, Event, EventWrapper } from "./components";
 
-export const events = [
-  {
-    title: "test",
-    start: moment().add(1, "days").subtract(5, "hours").toDate(),
-    end: moment().add(1, "days").subtract(4, "hours").toDate(),
-    allDay: false,
-  },
-  {
-    title: "test larger",
-    start: moment().startOf("day").add(5, "hours").toDate(),
-    end: moment().startOf("day").add(10, "hours").toDate(),
-    allDay: false,
-  },
+const localizer = momentLocalizer(moment);
 
-  {
-    title: "test larger",
-    start: moment().startOf("day").add(15, "hours").toDate(),
-    end: moment().startOf("day").add(23, "hours").toDate(),
-    allDay: false,
-  },
-  {
-    title: "test all day",
-    start: moment().startOf("day").toDate(),
-    end: moment().startOf("day").add(1, "day").toDate(),
-    allDay: true,
-  },
-  {
-    title: "test 2 days",
-    start: moment().startOf("day").toDate(),
-    end: moment().startOf("day").add(2, "days").toDate(),
-    allDay: true,
-  },
-  {
-    title: "test multi-day",
-    start: moment().toDate(),
-    end: moment().add(3, "days").toDate(),
-    allDay: false,
-  },
-];
-export const navigate = {
-  PREVIOUS: "PREV",
-  NEXT: "NEXT",
-  TODAY: "TODAY",
-  DATE: "DATE",
-};
-const Toolbar = (props: any) => {
-  console.log(props);
-  return (
-    <Box sx={{ mt: 40 }}>
-      <Button onClick={() => props.onNavigate(navigate.PREVIOUS)}>Prev</Button>
-      <Button onClick={() => props.onNavigate(navigate.PREVIOUS)}>Next</Button> Toolbar
-    </Box>
-  );
-};
-const Event = (props: EventProps<any>) => {
-  return (
-    <span>
-      <strong>{props.event.title}</strong>
-      {props.event.desc && ":  " + props.event.desc}
-    </span>
-  );
-};
-
-const EventWrapper = (props: EventWrapperProps<any>) => {
-  console.log(props);
-  // const { continuesEarlier, event, label, accessors = {}, style } = props;
-  return <Box sx={{ width: "24px", height: "24px", backgroundColor: "#000fff" }}>event</Box>;
-};
 export const CalendarFeature = () => {
+  const { components, defaultDate } = useMemo(
+    () => ({
+      components: {
+        event: Event,
+        // agenda: {
+        //   event: EventAgenda,
+        // },
+        toolbar: Toolbar,
+        eventWrapper: EventWrapper,
+      },
+      defaultDate: new Date(new Date().setDate(new Date().getDate())),
+    }),
+    []
+  );
   return (
     <>
       <BigCalendar
@@ -89,16 +29,9 @@ export const CalendarFeature = () => {
         step={60}
         showMultiDayTimes
         localizer={localizer}
-        defaultDate={new Date(new Date().setDate(new Date().getDate()))}
+        defaultDate={defaultDate}
         toolbar={true}
-        components={{
-          event: Event,
-          // agenda: {
-          //   event: EventAgenda,
-          // },
-          toolbar: Toolbar,
-          eventWrapper: EventWrapper,
-        }}
+        components={components}
         events={[
           {
             title: "NOW",

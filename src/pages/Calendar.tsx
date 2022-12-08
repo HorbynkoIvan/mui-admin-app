@@ -1,5 +1,5 @@
-import { CalendarFeature } from "features";
 import { Grid, Box } from "@mui/material";
+import { CalendarFeature } from "features";
 
 export const Calendar = () => {
   return (
