@@ -1,16 +1,17 @@
-import { Button } from "../buttons";
-import { styled } from "@mui/material/styles";
+import { Button } from "common/components/buttons";
+import { styled } from "@mui/material";
 
 export const ButtonPrimary = styled(Button)(({ theme }) => ({
-  width: "308px",
   height: "56px",
   color: theme.palette.primary.contrastText,
-  padding: 0,
-  border: `1px solid ${theme.palette.grey[300]}`,
   borderRadius: "8px",
-  background: theme.palette.primary.main,
+  backgroundColor: theme.palette.primary.main,
+  transition: theme.transitions.create("backgroundColor", {
+    easing: theme.transitions.easing.easeInOut,
+    duration: theme.transitions.duration.standard,
+  }),
   "&:hover": {
-    background: theme.palette.primary.light,
+    backgroundColor: theme.palette.primary.light,
   },
   "&:active, &:focus": {},
 }));
