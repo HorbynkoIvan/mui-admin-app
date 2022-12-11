@@ -1,9 +1,11 @@
 import { Typography } from "@mui/material";
+import { AccordionOne } from "common";
 
 export const Dashboard = () => {
   return (
     <>
       <h1>Dashboard page</h1>
+      <AccordionOne />
       <Typography paragraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
         labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum facilisis leo

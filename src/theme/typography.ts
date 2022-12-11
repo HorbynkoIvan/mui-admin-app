@@ -16,13 +16,21 @@ export const typography = {
     lineHeight: 44 / 36,
     fontSize: 36,
   },
-  h3: {},
-  h4: {},
-  h5: {},
-  h6: {
+  h3: {
     fontWeight: 400,
     lineHeight: 30 / 24,
-    fontSize: 30,
+    fontSize: 24,
+  },
+  h4: {},
+  h5: {
+    fontWeight: 400,
+    lineHeight: 28 / 16,
+    fontSize: 16,
+  },
+  h6: {
+    fontWeight: 400,
+    lineHeight: 20 / 16,
+    fontSize: 16,
   },
   subtitle1: {},
   subtitle2: {},
