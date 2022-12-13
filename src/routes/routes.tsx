@@ -1,5 +1,13 @@
 import { MainLayout, AuthLayout } from "layouts";
-import { Login, Registration, ForgotPassword, Dashboard, Certificates, Calendar } from "pages";
+import {
+  Login,
+  Registration,
+  ForgotPassword,
+  Dashboard,
+  Certificates,
+  Calendar,
+  User,
+} from "pages";
 
 export const routes = [
   {
@@ -16,6 +24,7 @@ export const routes = [
       { path: "/account", element: <Dashboard /> },
       { path: "/settings", element: <Dashboard /> },
       { path: "/support", element: <Dashboard /> },
+      { path: "/user", element: <User /> },
     ],
   },
   {

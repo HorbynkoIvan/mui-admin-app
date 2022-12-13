@@ -7,6 +7,7 @@ import {
   MdPerson,
   MdSettings,
   MdSupport,
+  MdVerifiedUser,
 } from "react-icons/md";
 import { MenuItem } from "../../interfaces";
 
@@ -100,6 +101,12 @@ const menuConfig: MenuItem[] = [
     title: "Support",
     url: "/support",
     icon: MdSupport,
+  },
+  {
+    id: "user_id",
+    title: "User",
+    url: "/user",
+    icon: MdVerifiedUser,
   },
 ];
 
