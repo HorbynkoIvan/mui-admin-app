@@ -1,7 +1,7 @@
-import { Button, Grid, Stack, Tabs as TabsMui, TextField, Typography } from "@mui/material";
+import { Button, Grid, Stack, Tabs as TabsMui, Typography } from "@mui/material";
 
 import { typography } from "theme";
-import { TextFieldOne } from "common";
+import { TextFieldOne, PhoneInput } from "common";
 
 import { ButtonLogout, Tab, TabPanel } from "../components";
 import { useTabs } from "../hooks";
@@ -36,23 +36,29 @@ export const Tabs = () => {
               <Stack direction="column" spacing={2} flexGrow={1}>
                 {/* 1*/}
 
-                <TextFieldOne />
-                <TextField
-                  label="ML Features"
-                  InputLabelProps={{ shrink: true }}
-                  variant="outlined"
-                  placeholder="Login/E-mail"
-                  sx={{ borderRadius: "8px" }}
+                <TextFieldOne label="FirstName" placeholder="FirstName" helperText=" " />
+                <TextFieldOne
+                  label="LastName"
+                  placeholder="LastName"
+                  helperText={"hfdvfjshvbjfdb"}
                 />
-
-                <TextField
-                  variant="outlined"
-                  placeholder="Login/E-mail"
-                  sx={{ borderRadius: "8px" }}
-                />
+                <TextFieldOne label="Date of birth" placeholder="Date of birth" helperText=" " />
               </Stack>
               <Stack direction="column" spacing={2} flexGrow={1}>
                 {/* //2*/}
+                <PhoneInput
+                  name="phone"
+                  label="Phone"
+                  // value={values.phone}
+                  // onChange={handleChange}
+                  autoComplete="off"
+                  customInput={TextFieldOne}
+                  fullWidth
+                  helperText=" "
+                  // error={!!errors.phone}
+                />
+                <TextFieldOne label="E-mail" placeholder="E-mail" helperText=" " />
+                <TextFieldOne label="Date of birth" placeholder="Date of birth" helperText=" " />
               </Stack>
             </Stack>
           </Grid>
@@ -64,8 +70,18 @@ export const Tabs = () => {
 
             <Stack spacing={2}>
               {/* 3 */}
-
-              <Button>Оформить заказ</Button>
+              <TextFieldOne label="Enter password *" placeholder="Enter password" helperText=" " />
+              <TextFieldOne
+                label="Password Confirmation *"
+                placeholder="Password Confirmation"
+                helperText=" "
+              />
+              <TextFieldOne
+                label="Password Confirmation *"
+                placeholder="Password Confirmation"
+                helperText=" "
+              />
+              <Button color="success">Save</Button>
             </Stack>
           </Grid>
         </Grid>
