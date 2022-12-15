@@ -1,8 +1,9 @@
-import { alpha, styled } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import { TextField as TextFieldMui, TextFieldProps, Typography } from "@mui/material";
 
 const TextFieldRoot = styled(TextFieldMui)(({ theme }) => ({
   "& .MuiInputBase-input": {
+    width: "100%",
     background: "#E9ECEE",
     borderRadius: "5px",
     border: "1px solid #ced4da",
@@ -14,6 +15,6 @@ const TextFieldRoot = styled(TextFieldMui)(({ theme }) => ({
 export const TextFieldOne = ({ label, ...props }: TextFieldProps) => (
   <>
     <Typography variant="h6">{label}</Typography>
-    <TextFieldRoot {...props} />
+    <TextFieldRoot {...props} fullWidth />
   </>
 );
