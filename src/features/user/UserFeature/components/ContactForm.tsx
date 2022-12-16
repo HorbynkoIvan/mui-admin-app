@@ -17,7 +17,7 @@ export const ContactForm = () => {
             Редагування особистих даних
           </Typography>
           <Stack direction="row" spacing={2}>
-            <Stack direction="column" flexGrow={1}>
+            <Stack direction="column" spacing={1} flexGrow={1}>
               <TextFieldOne
                 label="FirstName"
                 placeholder="FirstName"
@@ -26,7 +26,7 @@ export const ContactForm = () => {
                 value={values.firstName}
                 onChange={handleChange}
                 error={touched.firstName && Boolean(errors.firstName)}
-                helperText={touched.firstName && errors.firstName}
+                helperText={(touched.firstName && errors.firstName) || " "}
               />
               <TextFieldOne
                 label="LastName"
@@ -36,12 +36,12 @@ export const ContactForm = () => {
                 value={values.lastName}
                 onChange={handleChange}
                 error={touched.lastName && Boolean(errors.lastName)}
-                helperText={touched.lastName && errors.lastName}
+                helperText={(touched.lastName && errors.lastName) || " "}
               />
               <Datepicker
                 value={value}
                 onChange={handleChange}
-                name="date"
+                name="birthDay"
                 renderInput={(params) => (
                   <TextFieldOne
                     {...params}
@@ -51,26 +51,26 @@ export const ContactForm = () => {
                     }}
                     fullWidth
                     label="Дата"
-                    error={touched.date && Boolean(errors.date)}
-                    helperText={touched.date && errors.date}
+                    error={touched.birthDay && Boolean(errors.birthDay)}
+                    helperText={touched.birthDay && errors.birthDay}
                   />
                 )}
                 views={["day"]}
                 inputFormat="yyyy-MM-dd"
               />
             </Stack>
-            <Stack direction="column" spacing={2} flexGrow={1}>
+            <Stack direction="column" spacing={1} flexGrow={1}>
               {/* //2*/}
               <PhoneInput
-                name="phone"
+                name="phoneMobile"
                 label="Phone"
-                value={values.phone}
+                value={values.phoneMobile}
                 onChange={handleChange}
                 autoComplete="off"
                 customInput={TextFieldOne}
                 fullWidth
-                error={touched.phone && Boolean(errors.phone)}
-                helperText={touched.phone && errors.phone}
+                error={touched.phoneMobile && Boolean(errors.phoneMobile)}
+                helperText={(touched.phoneMobile && errors.phoneMobile) || " "}
               />
               <TextFieldOne
                 label="E-mail"
@@ -80,7 +80,7 @@ export const ContactForm = () => {
                 value={values.email}
                 onChange={handleChange}
                 error={touched.email && Boolean(errors.email)}
-                helperText={touched.email && errors.email}
+                helperText={(touched.email && errors.email) || " "}
               />
               <TextFieldOne label="Date of birth" placeholder="Date of birth" helperText=" " />
             </Stack>
@@ -92,37 +92,37 @@ export const ContactForm = () => {
             Зміна пароля
           </Typography>
 
-          <Stack spacing={2}>
+          <Stack spacing={1}>
             {/* 3 */}
             <TextFieldOne
-              label="Enter password *"
-              placeholder="Enter password"
-              name="password"
+              label="Old password *"
+              placeholder="Old password"
+              name="oldPassword"
               onBlur={handleBlur}
-              value={values.password}
+              value={values.oldPassword}
               onChange={handleChange}
-              error={touched.password && Boolean(errors.password)}
-              helperText={touched.password && errors.password}
+              error={touched.oldPassword && Boolean(errors.oldPassword)}
+              helperText={(touched.oldPassword && errors.oldPassword) || " "}
             />
             <TextFieldOne
-              label="Password Confirmation *"
-              placeholder="Password Confirmation"
-              name="password2"
+              label="New password"
+              placeholder="New password"
+              name="newPassword"
               onBlur={handleBlur}
-              value={values.password2}
+              value={values.newPassword}
               onChange={handleChange}
-              error={touched.password2 && Boolean(errors.password2)}
-              helperText={touched.password2 && errors.password2}
+              error={touched.newPassword && Boolean(errors.newPassword)}
+              helperText={(touched.newPassword && errors.newPassword) || " "}
             />
             <TextFieldOne
-              label="Password Confirmation *"
-              placeholder="Password Confirmation"
-              name="confirmPassword"
+              label="New plain password"
+              placeholder="New plain password"
+              name="newPlainPassword"
               onBlur={handleBlur}
-              value={values.confirmPassword}
+              value={values.newPlainPassword}
               onChange={handleChange}
-              error={touched.confirmPassword && Boolean(errors.confirmPassword)}
-              helperText={touched.confirmPassword && errors.confirmPassword}
+              error={touched.newPlainPassword && Boolean(errors.newPlainPassword)}
+              helperText={(touched.newPlainPassword && errors.newPlainPassword) || " "}
             />
             <Button color="success">Save</Button>
           </Stack>

@@ -9,13 +9,13 @@ export const useContactForm = () => {
     initialValues: {
       firstName: "",
       lastName: "",
-      date: "",
-      phone: "",
+      birthDay: "",
+      phoneMobile: "",
       email: "",
       checkbox: true,
-      password: "",
-      password2: "",
-      confirmPassword: "",
+      oldPassword: "",
+      newPassword: "",
+      newPlainPassword: "",
     },
 
     validationSchema: yup.object({
@@ -27,11 +27,8 @@ export const useContactForm = () => {
         .string()
         .required("Заполните поле")
         .matches(REG_EXP_CYRILLIC_WITH_DASH, "Заполните поле кириллицей"),
-      date: yup
-        .string()
-        .required("Заполните поле")
-        .matches(REG_EXP_CYRILLIC_WITH_DASH, "Заполните поле кириллицей"),
-      phone: yup
+      birthDay: yup.date().required("Заполните поле"),
+      phoneMobile: yup
         .string()
         .required("Заполните поле")
         .test(
@@ -44,22 +41,22 @@ export const useContactForm = () => {
         ),
       email: yup.string().email("Invalid email format").required("Required field"),
       checkbox: yup.bool(),
-      password: yup
+      oldPassword: yup
         .string()
         .min(8, "Minimum 8 characters")
         .max(50, "Maximum 50 characters")
         .required("Required field"),
-      password2: yup
+      newPassword: yup
         .string()
         .min(8, "Minimum 8 characters")
         .max(50, "Maximum 50 characters")
         .required("Required field"),
-      confirmPassword: yup
+      newPlainPassword: yup
         .string()
         .min(8, "Minimum 8 characters")
         .max(50, "Maximum 50 characters")
         .required("Required field")
-        .oneOf([yup.ref("password"), null], "Passwords must match"),
+        .oneOf([yup.ref("newPassword"), null], "Passwords must match"),
     }),
     onSubmit: (values) => {
       console.log("onSubmit", JSON.stringify(values, null, 2));
