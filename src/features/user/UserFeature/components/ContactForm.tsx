@@ -1,13 +1,36 @@
-import { useState } from "react";
 import { Box, Button, Grid, Stack, Typography } from "@mui/material";
-
+// import moment from "moment";
 import { typography } from "theme";
 import { TextFieldOne, PhoneInput, Datepicker } from "common";
 import { useContactForm } from "../hooks/useContactForm";
+import { MyFormValues } from "../interfaces";
+
+const dataAPI: MyFormValues = {
+  firstName: "Горбинко",
+  lastName: "Іван",
+  birthDay: "2022-12-22T22:00:00.000Z",
+  phoneMobile: "+38 (093) 657 49 36",
+  email: "horbynko.i@gmail.com",
+  checkbox: true,
+  oldPassword: "wefwefwe",
+  newPassword: "11111111",
+  newPlainPassword: "11111111",
+};
 
 export const ContactForm = () => {
-  const { values, errors, touched, handleChange, handleBlur, handleSubmit } = useContactForm();
-  const [value, setValue] = useState<Date | null>(new Date());
+  const {
+    values,
+    errors,
+    touched,
+    handleChange,
+    handleBlur,
+    handleSubmit,
+    isSubmitting,
+    setFieldValue,
+  } = useContactForm(dataAPI);
+
+  // console.log(moment(new Date(values.birthDay)).format("YYYY-MM-DD"));
+  // console.log(touched, errors);
 
   return (
     <Box component="form" noValidate autoComplete="off" onSubmit={handleSubmit}>
@@ -26,7 +49,7 @@ export const ContactForm = () => {
                 value={values.firstName}
                 onChange={handleChange}
                 error={touched.firstName && Boolean(errors.firstName)}
-                helperText={(touched.firstName && errors.firstName) || " "}
+                helperText={(touched.firstName && <>errors.firstName</>) || " "}
               />
               <TextFieldOne
                 label="LastName"
@@ -36,11 +59,11 @@ export const ContactForm = () => {
                 value={values.lastName}
                 onChange={handleChange}
                 error={touched.lastName && Boolean(errors.lastName)}
-                helperText={(touched.lastName && errors.lastName) || " "}
+                helperText={(touched.lastName && <>errors.lastName</>) || " "}
               />
               <Datepicker
-                value={value}
-                onChange={handleChange}
+                value={values.birthDay}
+                onChange={(value) => setFieldValue("birthDay", value)}
                 name="birthDay"
                 renderInput={(params) => (
                   <TextFieldOne
@@ -52,7 +75,7 @@ export const ContactForm = () => {
                     fullWidth
                     label="Дата"
                     error={touched.birthDay && Boolean(errors.birthDay)}
-                    helperText={touched.birthDay && errors.birthDay}
+                    helperText={touched.birthDay && <>errors.birthDay</>}
                   />
                 )}
                 views={["day"]}
@@ -66,11 +89,12 @@ export const ContactForm = () => {
                 label="Phone"
                 value={values.phoneMobile}
                 onChange={handleChange}
+                onBlur={handleBlur}
                 autoComplete="off"
                 customInput={TextFieldOne}
                 fullWidth
                 error={touched.phoneMobile && Boolean(errors.phoneMobile)}
-                helperText={(touched.phoneMobile && errors.phoneMobile) || " "}
+                helperText={(touched.phoneMobile && <>{errors.phoneMobile}</>) || " "}
               />
               <TextFieldOne
                 label="E-mail"
@@ -80,7 +104,7 @@ export const ContactForm = () => {
                 value={values.email}
                 onChange={handleChange}
                 error={touched.email && Boolean(errors.email)}
-                helperText={(touched.email && errors.email) || " "}
+                helperText={(touched.email && <>errors.email</>) || " "}
               />
               <TextFieldOne label="Date of birth" placeholder="Date of birth" helperText=" " />
             </Stack>
@@ -102,7 +126,7 @@ export const ContactForm = () => {
               value={values.oldPassword}
               onChange={handleChange}
               error={touched.oldPassword && Boolean(errors.oldPassword)}
-              helperText={(touched.oldPassword && errors.oldPassword) || " "}
+              helperText={(touched.oldPassword && <>errors.oldPassword</>) || " "}
             />
             <TextFieldOne
               label="New password"
@@ -112,7 +136,7 @@ export const ContactForm = () => {
               value={values.newPassword}
               onChange={handleChange}
               error={touched.newPassword && Boolean(errors.newPassword)}
-              helperText={(touched.newPassword && errors.newPassword) || " "}
+              helperText={(touched.newPassword && <>errors.newPassword</>) || " "}
             />
             <TextFieldOne
               label="New plain password"
@@ -122,9 +146,11 @@ export const ContactForm = () => {
               value={values.newPlainPassword}
               onChange={handleChange}
               error={touched.newPlainPassword && Boolean(errors.newPlainPassword)}
-              helperText={(touched.newPlainPassword && errors.newPlainPassword) || " "}
+              helperText={(touched.newPlainPassword && <>errors.newPlainPassword</>) || " "}
             />
-            <Button color="success">Save</Button>
+            <Button color="success" disabled={isSubmitting} onClick={() => handleSubmit()}>
+              Save
+            </Button>
           </Stack>
         </Grid>
       </Grid>

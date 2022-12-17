@@ -2,21 +2,24 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 
 import { usePhoneValidation } from "common/hooks";
-import { REG_EXP_CYRILLIC_WITH_DASH, REG_EXP_NUMBER_CYRILLIC } from "common/constants";
+import { REG_EXP_CYRILLIC_WITH_DASH } from "common/constants";
+import { MyFormValues } from "../interfaces";
 
-export const useContactForm = () => {
+const defaultValues: MyFormValues = {
+  firstName: "",
+  lastName: "",
+  birthDay: null,
+  phoneMobile: "",
+  email: "",
+  checkbox: true,
+  oldPassword: "",
+  newPassword: "",
+  newPlainPassword: "",
+};
+
+export const useContactForm = (dataAPI: any) => {
   const form = useFormik({
-    initialValues: {
-      firstName: "",
-      lastName: "",
-      birthDay: "",
-      phoneMobile: "",
-      email: "",
-      checkbox: true,
-      oldPassword: "",
-      newPassword: "",
-      newPlainPassword: "",
-    },
+    initialValues: { ...defaultValues, ...dataAPI },
 
     validationSchema: yup.object({
       firstName: yup
@@ -27,7 +30,7 @@ export const useContactForm = () => {
         .string()
         .required("Заполните поле")
         .matches(REG_EXP_CYRILLIC_WITH_DASH, "Заполните поле кириллицей"),
-      birthDay: yup.date().required("Заполните поле"),
+      birthDay: yup.date().nullable().required("Заполните поле"),
       phoneMobile: yup
         .string()
         .required("Заполните поле")
@@ -40,7 +43,7 @@ export const useContactForm = () => {
           }
         ),
       email: yup.string().email("Invalid email format").required("Required field"),
-      checkbox: yup.bool(),
+      checkbox: yup.boolean().oneOf([true], "This field must be checked"),
       oldPassword: yup
         .string()
         .min(8, "Minimum 8 characters")
