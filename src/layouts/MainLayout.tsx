@@ -1,11 +1,11 @@
 import { Box } from "@mui/material";
 import { palette } from "theme/palette";
-import { Header, Sidebar } from "features";
+import { HeaderFeature, Sidebar } from "features";
 import { Outlet } from "react-router-dom";
 import { DRAWER_WIDTH } from "common/constants";
 export const MainLayout = (): JSX.Element => (
   <Box sx={{ display: "flex" }}>
-    <Header />
+    <HeaderFeature />
     <Sidebar />
     <Box
       component="main"
