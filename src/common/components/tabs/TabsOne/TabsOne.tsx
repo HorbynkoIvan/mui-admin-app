@@ -1,4 +1,4 @@
-import { Tabs as TabsMui, Box, Typography, Grid, Stack } from "@mui/material";
+import { Tabs as TabsMui, Typography, Grid, Stack } from "@mui/material";
 
 import { Tab, TabPanel } from "./components";
 import { useTabs } from "./hooks";
