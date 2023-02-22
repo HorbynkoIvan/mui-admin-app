@@ -1,12 +1,23 @@
-import { Avatar, Box, Stack, Tooltip, Menu, MenuItem, IconButton, Typography } from "@mui/material";
+import {
+  Avatar,
+  Box,
+  Stack,
+  Tooltip,
+  Menu,
+  MenuItem,
+  IconButton,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import { useUserMenu } from "../hooks";
-import { palette, typography } from "theme";
+import { typography } from "theme";
 
 type Props = {
   username: string | undefined;
 };
 
 export const Profile = ({ username }: Props) => {
+  const { palette } = useTheme();
   const { settings, anchorElUser, handleOpenUserMenu, handleCloseUserMenu } = useUserMenu();
 
   return (

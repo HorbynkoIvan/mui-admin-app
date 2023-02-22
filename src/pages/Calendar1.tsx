@@ -23,7 +23,7 @@ export const Calendar = () => {
     <>
       <h1>Calendar page</h1>
       <FullCalendar
-        plugins={[dayGridPlugin, interactionPlugin]}
+        // plugins={[dayGridPlugin, interactionPlugin]}
         headerToolbar={{
           left: "prev,next today",
           center: "title",

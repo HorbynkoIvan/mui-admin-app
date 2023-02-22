@@ -59,7 +59,7 @@ export const useContactForm = (dataAPI: any) => {
         .min(8, "Minimum 8 characters")
         .max(50, "Maximum 50 characters")
         .required("Required field")
-        .oneOf([yup.ref("newPassword"), null], "Passwords must match"),
+        .oneOf([yup.ref("newPassword"), ""], "Passwords must match"),
     }),
     onSubmit: (values) => {
       console.log("onSubmit", JSON.stringify(values, null, 2));

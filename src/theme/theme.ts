@@ -80,7 +80,7 @@ export const useMode = () => {
     []
   );
 
-  const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
+  const theme: any = useMemo(() => createTheme(themeSettings(mode)), [mode]);
 
   return [theme, colorMode];
 };
