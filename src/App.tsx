@@ -5,7 +5,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import Topbar from "./scense/global/Topbar";
 import Dashboard from "./scense/dashboard";
 import Sidebar from "./scense/global/Sidebar";
-// import Team from "./scenes/team";
+import Team from "./scense/team";
 // import Invoices from "./scenes/invoices";
 // import Contacts from "./scenes/contacts";
 // import Bar from "./scenes/bar";
@@ -32,7 +32,7 @@ export default function App(): JSX.Element {
               />
               <Routes>
                 <Route path="/" element={<Dashboard />} />
-                {/* <Route path="/team" element={<Team />} /> */}
+                <Route path="/team" element={<Team />} />
                 {/* <Route path="/contacts" element={<Contacts />} /> */}
                 {/* <Route path="/invoices" element={<Invoices />} /> */}
                 {/* <Route path="/form" element={<Form />} /> */}
