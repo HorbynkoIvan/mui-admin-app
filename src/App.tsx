@@ -1,8 +1,8 @@
-import { Router } from "routes";
 import { BrowserRouter } from "react-router-dom";
 import { ColorModeContext, useMode } from "./theme";
 import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
+import Topbar from "./scense/global/Topbar";
 
 export default function App(): JSX.Element {
   const [theme, colorMode] = useMode();
@@ -12,7 +12,11 @@ export default function App(): JSX.Element {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <BrowserRouter>
-          <Router />
+          <main className="content">
+            <Topbar
+            // setIsSidebar={setIsSidebar}
+            />
+          </main>
         </BrowserRouter>
       </ThemeProvider>
     </ColorModeContext.Provider>
