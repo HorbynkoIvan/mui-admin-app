@@ -4,6 +4,7 @@ import { darkPalette, lightPalette } from "./palette";
 import { typography } from "./typography";
 import { general } from "./general";
 import { createContext, useMemo, useState } from "react";
+// import anything = jasmine.anything;
 
 // color design tokens
 // #666666
@@ -24,7 +25,7 @@ const themeSettings = (mode: string) => {
     ...general,
     typography,
     palette: {
-      // mode: mode,
+      mode: mode,
       ...(mode === "dark"
         ? {
             // palette values for dark mode
