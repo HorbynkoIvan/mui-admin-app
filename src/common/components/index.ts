@@ -6,4 +6,5 @@ export * from "./accordions";
 export * from "./tabs";
 export * from "./selects";
 export * from "./barChart";
+export * from "./pieChart";
 export * from "./header";
