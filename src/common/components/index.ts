@@ -7,4 +7,5 @@ export * from "./tabs";
 export * from "./selects";
 export * from "./barChart";
 export * from "./pieChart";
+export * from "./lineChart";
 export * from "./header";
