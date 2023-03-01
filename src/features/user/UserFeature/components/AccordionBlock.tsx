@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 
 import { typography } from "theme";
 
-import { Accordion, AccordionDetails, AccordionSummary } from "../components";
+import { Accordion, AccordionDetails, AccordionSummary } from "./index";
 
 /* ToDo need move to "feature" AccordionOne */
 export const AccordionBlock = () => {

@@ -8,4 +8,7 @@ export * from "./selects";
 export * from "./barChart";
 export * from "./pieChart";
 export * from "./lineChart";
+export * from "./geographyChart";
 export * from "./header";
+export * from "./statBox";
+export * from "./progressCircle";

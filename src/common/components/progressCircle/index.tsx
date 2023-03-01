@@ -5,7 +5,7 @@ type Props = {
   progress?: any;
   size?: any;
 };
-const ProgressCircle = ({ progress = "0.75", size = "40" }: Props) => {
+export const ProgressCircle = ({ progress = "0.75", size = "40" }: Props) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const angle = progress * 360;
@@ -22,5 +22,3 @@ const ProgressCircle = ({ progress = "0.75", size = "40" }: Props) => {
     />
   );
 };
-
-export default ProgressCircle;

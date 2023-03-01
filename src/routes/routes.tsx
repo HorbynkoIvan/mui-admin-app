@@ -1,30 +1,36 @@
 import { MainLayout, AuthLayout } from "layouts";
+import { Login, Registration, ForgotPassword } from "pages";
 import {
-  Login,
-  Registration,
-  ForgotPassword,
-  Dashboard,
-  Certificates,
+  Bar,
+  Form,
+  FAQ,
   Calendar,
-  User,
-} from "pages";
+  Line,
+  Contacts,
+  Pie,
+  Team,
+  Geography,
+  Invoices,
+  Dashboard,
+  UserFeature,
+} from "features";
 
 export const routes = [
   {
     element: <MainLayout />,
     children: [
       { path: "/", element: <Dashboard /> },
-      { path: "/growth-plan", element: <Dashboard /> },
-      { path: "/new-courses", element: <Dashboard /> },
-      { path: "/deadline", element: <Dashboard /> },
-      { path: "/mandatory", element: <Dashboard /> },
-      { path: "/live-training", element: <Dashboard /> },
+      { path: "/team", element: <Team /> },
+      { path: "/contacts", element: <Contacts /> },
+      { path: "/invoices", element: <Invoices /> },
+      { path: "/form", element: <Form /> },
+      { path: "/bar", element: <Bar /> },
+      { path: "/pie", element: <Pie /> },
+      { path: "/line", element: <Line /> },
+      { path: "/faq", element: <FAQ /> },
       { path: "/calendar", element: <Calendar /> },
-      { path: "/certificates", element: <Certificates /> },
-      { path: "/account", element: <Dashboard /> },
-      { path: "/settings", element: <Dashboard /> },
-      { path: "/support", element: <Dashboard /> },
-      { path: "/user", element: <User /> },
+      { path: "/geography", element: <Geography /> },
+      { path: "/user", element: <UserFeature /> },
     ],
   },
   {

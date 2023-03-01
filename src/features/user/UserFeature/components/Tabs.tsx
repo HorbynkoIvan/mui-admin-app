@@ -1,6 +1,6 @@
 import { Stack, Tabs as TabsMui } from "@mui/material";
 
-import { ButtonLogout, Tab, TabPanel } from "../components";
+import { ButtonLogout, Tab, TabPanel } from "./index";
 import { useTabs } from "../hooks";
 import { ContactForm } from "./ContactForm";
 
