@@ -3,6 +3,7 @@ import { createTheme } from "@mui/material/styles";
 import { darkPalette, lightPalette } from "./palette";
 import { typography } from "./typography";
 import { general } from "./general";
+import { components } from "./components";
 import { createContext, useMemo, useState } from "react";
 // import anything = jasmine.anything;
 
@@ -22,6 +23,7 @@ const themeSettings = (mode: string) => {
   const colors = tokens(mode);
 
   return {
+    components,
     ...general,
     typography,
     palette: {
