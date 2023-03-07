@@ -1,4 +1,4 @@
-import { Button } from "common/components/buttons";
+import { Button } from "common/ui/buttons";
 import { styled, ButtonProps } from "@mui/material";
 import { MdAdd } from "react-icons/md";
 

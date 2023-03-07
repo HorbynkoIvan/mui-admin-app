@@ -6,14 +6,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import TrafficIcon from "@mui/icons-material/Traffic";
-import {
-  Header,
-  LineChart,
-  BarChart,
-  GeographyChart,
-  StatBox,
-  ProgressCircle,
-} from "common/components";
+import { Header, LineChart, BarChart, GeographyChart, StatBox, ProgressCircle } from "common/ui";
 
 export const Dashboard = () => {
   const theme = useTheme();

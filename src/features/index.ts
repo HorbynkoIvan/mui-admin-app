@@ -1,4 +1,4 @@
-export * from "./topbar";
+export * from "../common/components/TopBar";
 export * from "./sidebar";
 export * from "./dashboard";
 export * from "./bar";

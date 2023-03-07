@@ -9,7 +9,7 @@ import {
   MdVisibilityOff,
 } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { ButtonPrimary } from "../../../common/components/buttons/ButtonPrimary";
+import { ButtonPrimary } from "../../../common/ui/buttons/ButtonPrimary";
 
 const mock = { showPassword: true, checked: true };
 

@@ -1,4 +1,4 @@
-import { Button } from "common/components/buttons";
+import { Button } from "common/ui/buttons";
 import { styled } from "@mui/material";
 
 export const ButtonPrimary = styled(Button)(({ theme }) => ({

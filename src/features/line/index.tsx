@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { Header, LineChart } from "common/components";
+import { Header, LineChart } from "common/ui";
 
 export const Line = () => (
   <Box m="20px">

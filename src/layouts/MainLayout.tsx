@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { Topbar, Sidebar } from "features";
+import { TopBar, Sidebar } from "features";
 import { Outlet } from "react-router-dom";
 
 export const MainLayout = (): JSX.Element => (
@@ -11,7 +11,7 @@ export const MainLayout = (): JSX.Element => (
         width: "100%",
         height: "100%",
       }}>
-      <Topbar />
+      <TopBar />
       <Outlet />
     </Box>
   </Box>

@@ -6,7 +6,7 @@ import interactionPlugin from "@fullcalendar/interaction";
 import { formatDate, sliceEvents, createPlugin } from "@fullcalendar/core";
 import listPlugin from "@fullcalendar/list";
 import { Box, List, ListItem, ListItemText, Typography, useTheme } from "@mui/material";
-import { Header } from "common/components";
+import { Header } from "common/ui";
 import { tokens } from "../../theme";
 
 export const Calendar = () => {
