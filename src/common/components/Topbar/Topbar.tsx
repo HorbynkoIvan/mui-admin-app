@@ -10,7 +10,7 @@ import {
 } from "@mui/icons-material";
 import { ColorModeContext, tokens } from "theme";
 
-export const TopBar = () => {
+export const Topbar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const colorMode = useContext(ColorModeContext);

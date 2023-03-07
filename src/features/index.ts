@@ -1,5 +1,5 @@
-export * from "../common/components/TopBar";
-export * from "./sidebar";
+export * from "../common/components/Topbar";
+export * from "../common/components/Sidebar";
 export * from "./dashboard";
 export * from "./bar";
 export * from "./calendar";
