@@ -7,7 +7,7 @@ import {
   useTheme,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { Header } from "common/ui";
+import { Header } from "common/components";
 import { tokens } from "../../theme";
 
 export const FAQ = () => {
