@@ -11,7 +11,7 @@ type Props = {
   increase: string;
 };
 
-export const StatBox = ({ title, subtitle, icon, progress, increase }: Props) => {
+export const StatBox: React.FC<Props> = ({ title, subtitle, icon, progress, increase }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 

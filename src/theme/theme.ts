@@ -1,26 +1,35 @@
-import { createTheme } from "@mui/material/styles";
-
+import { createContext, useMemo, useState } from "react";
+import { createTheme, Theme } from "@mui/material/styles";
 import { darkPalette, lightPalette } from "./palette";
 import { typography } from "./typography";
 import { general } from "./general";
 import { components } from "./components";
-import { createContext, useMemo, useState } from "react";
-// import anything = jasmine.anything;
+import { PaletteMode } from "@mui/material";
 
-// color design tokens
-// #666666
-// #141b2d
-// #4cceac
-// #db4f4a
-// #6870fa
-
-export const tokens = (mode: string) => ({
+export const tokens = (mode: PaletteMode) => ({
   ...(mode === "dark" ? darkPalette : lightPalette),
 });
 
 // mui themeSettings
-const themeSettings = (mode: string) => {
+const themeSettings = (mode: PaletteMode) => {
   const colors = tokens(mode);
+
+  const palette = {
+    primary: {
+      main: colors.primary[mode === "light" ? 100 : 500],
+    },
+    secondary: {
+      main: colors.greenAccent[500],
+    },
+    neutral: {
+      dark: colors.grey[700],
+      main: colors.grey[500],
+      light: colors.grey[100],
+    },
+    background: {
+      default: mode === "light" ? "#fcfcfc" : colors.primary[500],
+    },
+  };
 
   return {
     components,
@@ -28,41 +37,7 @@ const themeSettings = (mode: string) => {
     typography,
     palette: {
       mode: mode,
-      ...(mode === "dark"
-        ? {
-            // palette values for dark mode
-            primary: {
-              main: colors.primary[500],
-            },
-            secondary: {
-              main: colors.greenAccent[500],
-            },
-            neutral: {
-              dark: colors.grey[700],
-              main: colors.grey[500],
-              light: colors.grey[100],
-            },
-            background: {
-              default: colors.primary[500],
-            },
-          }
-        : {
-            // palette values for light mode
-            primary: {
-              main: colors.primary[100],
-            },
-            secondary: {
-              main: colors.greenAccent[500],
-            },
-            neutral: {
-              dark: colors.grey[700],
-              main: colors.grey[500],
-              light: colors.grey[100],
-            },
-            background: {
-              default: "#fcfcfc",
-            },
-          }),
+      ...palette,
     },
   };
 };
@@ -73,8 +48,10 @@ export const ColorModeContext = createContext({
   toggleColorMode: () => {},
 });
 
-export const useMode = () => {
-  const [mode, setMode] = useState("dark");
+type UseModeReturnType = [theme: Theme, colorMode: { toggleColorMode: () => void }];
+
+export const useMode = (): UseModeReturnType => {
+  const [mode, setMode] = useState<PaletteMode>("dark");
 
   const colorMode = useMemo(
     () => ({
@@ -83,9 +60,7 @@ export const useMode = () => {
     []
   );
 
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  const theme: any = useMemo(() => createTheme(themeSettings(mode)), [mode]);
+  const theme: Theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
 
   return [theme, colorMode];
 };
