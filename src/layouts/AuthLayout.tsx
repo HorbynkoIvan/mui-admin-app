@@ -25,11 +25,7 @@ export const AuthLayout = () => (
             alt="logo"
             sx={{ maxWidth: "112px", height: "auto" }}
           />
-          <Box
-            sx={{
-              mt: "130px",
-              height: "100%",
-            }}>
+          <Box height="100%" mt={130}>
             <Outlet />
           </Box>
         </Stack>
