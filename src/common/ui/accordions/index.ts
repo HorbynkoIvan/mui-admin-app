@@ -1,1 +1,0 @@
-export { AccordionOne } from "./AccordionOne";

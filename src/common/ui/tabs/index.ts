@@ -1,1 +1,0 @@
-export { TabsOne } from "./TabsOne";

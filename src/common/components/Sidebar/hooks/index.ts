@@ -1,1 +1,2 @@
-export * from "./useSidebar";
+export * from "./useSidebarConfig";
+export * from "./useSidebarCollapse";
