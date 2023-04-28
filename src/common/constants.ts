@@ -1,5 +1,3 @@
-export const DRAWER_WIDTH = 240;
-
 export const REG_EXP_CYRILLIC_WITH_DASH = /^[а-яА-ЯёЁіІїЇєЄґҐюЮ-]*$/u;
 export const REG_EXP_NUMBER_CYRILLIC = /^[0-9]+[а-яА-ЯёЁіІїЇєЄґҐюЮ\-/0-9]*$/u;
 

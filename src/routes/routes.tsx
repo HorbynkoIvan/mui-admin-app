@@ -12,7 +12,6 @@ import {
   Geography,
   Invoices,
   Dashboard,
-  UserFeature,
 } from "features";
 
 export const routes = [
@@ -30,7 +29,6 @@ export const routes = [
       { path: "/faq", element: <FAQ /> },
       { path: "/calendar", element: <Calendar /> },
       { path: "/geography", element: <Geography /> },
-      { path: "/user", element: <UserFeature /> },
     ],
   },
   {

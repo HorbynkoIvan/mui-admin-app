@@ -1,5 +1,3 @@
-export * from "../common/components/Topbar";
-export * from "../common/components/Sidebar";
 export * from "./dashboard";
 export * from "./bar";
 export * from "./calendar";
@@ -11,4 +9,3 @@ export * from "./invoices";
 export * from "./line";
 export * from "./pie";
 export * from "./team";
-export * from "./user";

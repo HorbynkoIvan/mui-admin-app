@@ -12,6 +12,7 @@ const TextFieldRoot = styled(TextFieldMui)(({ theme }) => ({
     transition: theme.transitions.create(["border-color", "background-color", "box-shadow"]),
   },
 }));
+
 export const TextFieldOne = ({ label, ...props }: TextFieldProps) => (
   <>
     <Typography variant="h6">{label}</Typography>
