@@ -29,6 +29,7 @@ export const routes = [
       { path: "/faq", element: <FAQ /> },
       { path: "/calendar", element: <Calendar /> },
       { path: "/geography", element: <Geography /> },
+      { path: "*", element: <h1>No Match</h1> },
     ],
   },
   {
